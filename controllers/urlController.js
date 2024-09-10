@@ -8,14 +8,15 @@ const generateHash = (url) => {
 
 // POST controller for hashing the url
 export const hashUrl = async (req, res) => {
-  const { url } = req.body;
+  const { url,maxAccess } = req.body;
   const hash = generateHash(url);
 
   try {
     const newUrl = new Url({
       originalUrl: url,
       hash,
-      clickCount: 0
+      clickCount: 0,
+      maxAccess: maxAccess || Infinity
     });
     await newUrl.save();
     res.status(200).json({ hashedUrl: `http://localhost:5000/api/${hash}` });
