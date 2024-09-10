@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import Url from "../models/url.js"; // Assuming you have a URL model in mongoose
+import Url from "../models/url.js"; 
 import { error } from "console";
 
 // Hash generation function to change original url to hash
@@ -38,7 +38,7 @@ export const redirectUrl = async (req, res) => {
         if(urlData.clickCount > urlData.maxAccess){
             return res.status(403).json({error:"Sorry, Access limit reached for this URL"})
         }
-      // Increment click count
+      // Increment click count 
       urlData.clickCount++;
       await urlData.save();
 
