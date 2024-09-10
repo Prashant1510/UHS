@@ -14,6 +14,10 @@ const urlSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  maxAccess:{
+    type:Number,
+    default: Infinity
+  },
   createdAt: {
     type: Date,
     default: Date.now
