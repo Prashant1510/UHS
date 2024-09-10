@@ -1,0 +1,21 @@
+{
+  "name": "backend-for-url-hashing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0",
+    "mongodb": "^6.8.1",
+    "mongoose": "^8.6.1",
+    "nodemon": "^3.1.4"
+  }
+}
