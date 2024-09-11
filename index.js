@@ -15,7 +15,12 @@ app.use(cors({
     allowedHeaders: ['Content-Type'],
     credentials: true  
 }));
-app.options('*', cors());
+app.options('*', cors({
+    origin: 'https://quicklinkurls.netlify.app', // Same origin
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'], // Same headers
+    credentials: true
+}));
 app.use('/api',urlRoute);
 
 
