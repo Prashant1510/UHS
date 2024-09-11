@@ -9,12 +9,13 @@ dotenv.config();
 app.use(express.json());
 const PORT = process.env.PORT;
 connectToMongoDB(); // to establish connection with database
-app.use(cors(
-    {
-        origin: 'https://quicklinkurls.netlify.app/'  
-    }
-));
-
+app.use(cors({
+    origin: 'https://quicklinkurls.netlify.app', 
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true  
+}));
+app.options('*', cors());
 app.use('/api',urlRoute);
 
 
