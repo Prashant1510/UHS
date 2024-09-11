@@ -12,8 +12,7 @@ const generateHash = (url) => {
 export const hashUrl = async (req, res) => {
   const { url,maxAccess } = req.body;
   const hash = generateHash(url);
-  const newHashedUrl = `http://localhost:3001/api/${hash}`;
-
+  const newHashedUrl = `${process.env.BASE_URL}/${hash}`;
 
   try {
     const newUrl = new Url({
